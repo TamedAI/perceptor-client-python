@@ -5,7 +5,7 @@ This repository contains an API client for the PERCEPTOR Model of TamedAI. PERCE
 To install the PERCEPTOR API Client, run the following command:
 
 ```
-pip install git+
+pip install git+https://github.com/TamedAI/perceptor-client-python
 ```
 
 First, you need to import the necessary classes and functions:
@@ -23,7 +23,13 @@ You can now create a QARequest object by providing a URL of an image and a query
 
 ```
 req = QARequest.from_url("https://your_url_here", "Your query here?")
+
+#req=QARequest.from_file...
+#req=QARequest.from_bytes...
+#req=QARequest.from_pil_image...
 ```
+
+
 To get the answer, run the request using the client:
 
 ```
