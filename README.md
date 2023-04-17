@@ -4,24 +4,24 @@ This repository contains an API client for the PERCEPTOR Model of TamedAI. PERCE
 ## 📦 Installation
 To install the PERCEPTOR API Client, run the following command:
 
-```
+```bash
 pip install git+https://github.com/TamedAI/perceptor-client-python
 ```
 
 First, you need to import the necessary classes and functions:
 
-```
+```python
 from tamedai.perceptor import QARequest, PerceptorAPIClient
 ```
 
 Then, create an instance of the API client by passing your API token:
 
-```
+```python
 client = PerceptorAPIClient("Your token here")
 ```
 You can now create a QARequest object by providing a URL of an image and a query:
 
-```
+```python
 req = QARequest.from_url("https://your_url_here", "Your query here?")
 
 #req=QARequest.from_file...
@@ -32,23 +32,23 @@ req = QARequest.from_url("https://your_url_here", "Your query here?")
 
 To get the answer, run the request using the client:
 
-```
+```python
 res = client.run(req)
 ```
 You can then access the response text and score as follows:
 
-```
+```python
 print(f"""
-Request: {req.query}
-Response: {res.text}
-Score: {res.score}
+    Request: {req.query}
+    Response: {res.text}
+    Score: {res.score}
 """)
 ```
 
 ## 📚 Example
 Here's a full example of using the PERCEPTOR API client to extract information from a document image:
 
-```
+```python
 from tamedai.perceptor import QARequest, PerceptorAPIClient
 import argparse
 
